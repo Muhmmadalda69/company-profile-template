@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ruang Code logo">
+  <!-- Left code bracket < -->
+  <polygon points="70,12 45,60 70,108 56,108 28,60 56,12" fill="#252878"/>
+  <!-- Right code bracket > -->
+  <polygon points="130,12 155,60 130,108 144,108 172,60 144,12" fill="#252878"/>
+
+  <!-- Orange diamond (rotated square) -->
+  <rect x="78" y="25" width="44" height="44" transform="rotate(45,100,60)" fill="#F5A71B"/>
+
+  <!-- Stylised R letter inside diamond (navy) -->
+  <!-- Bowl top -->
+  <circle cx="98" cy="50" r="8" fill="none" stroke="#252878" stroke-width="6"/>
+  <!-- Vertical stem -->
+  <line x1="90" y1="42" x2="90" y2="74" stroke="#252878" stroke-width="6" stroke-linecap="round"/>
+  <!-- Diagonal leg -->
+  <line x1="98" y1="58" x2="112" y2="74" stroke="#252878" stroke-width="6" stroke-linecap="round"/>
+</svg>
