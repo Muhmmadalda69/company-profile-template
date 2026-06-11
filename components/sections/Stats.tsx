@@ -1,8 +1,10 @@
 import CountUp from "@/components/ui/CountUp";
 import Reveal from "@/components/ui/Reveal";
-import { stats } from "@/lib/data";
+import { getStats } from "@/lib/content";
 
-export default function Stats() {
+export default async function Stats() {
+  const stats = await getStats();
+
   return (
     <section className="bg-white" aria-label="Pencapaian kami">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

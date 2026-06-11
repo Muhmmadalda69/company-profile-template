@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Open_Sans, Poppins } from "next/font/google";
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -97,11 +95,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <Navbar />
-        <main id="konten-utama" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

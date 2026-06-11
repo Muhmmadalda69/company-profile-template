@@ -4,7 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { faqs, services } from "@/lib/data";
+import { getServices } from "@/lib/content";
+import { faqs } from "@/lib/data";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -24,7 +25,9 @@ const faqJsonLd = {
   })),
 };
 
-export default function LayananPage() {
+export default async function LayananPage() {
+  const services = await getServices();
+
   return (
     <>
       <script

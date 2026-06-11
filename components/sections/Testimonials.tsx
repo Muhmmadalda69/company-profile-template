@@ -1,6 +1,6 @@
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { testimonials } from "@/lib/data";
+import { getTestimonials } from "@/lib/content";
 
 function initials(name: string) {
   return name
@@ -10,7 +10,9 @@ function initials(name: string) {
     .join("");
 }
 
-export default function Testimonials() {
+export default async function Testimonials() {
+  const testimonials = await getTestimonials();
+
   return (
     <section className="bg-surface" aria-labelledby="testimoni-heading">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">

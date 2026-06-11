@@ -1,5 +1,6 @@
 "use server";
 
+import { prisma } from "@/lib/db";
 import type { ContactFormState } from "@/lib/types";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -39,9 +40,9 @@ export async function submitContactForm(
     };
   }
 
-  // Integrate with your email provider or CRM here (e.g. Resend, Nodemailer,
-  // or an internal ticketing API). Data is already validated and sanitized.
-  console.info("Pesan kontak baru diterima", { name, email, subject });
+  await prisma.contactMessage.create({
+    data: { name, email, subject, message },
+  });
 
   return {
     status: "success",

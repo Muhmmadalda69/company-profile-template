@@ -1,7 +1,9 @@
 import Button from "@/components/ui/Button";
-import { siteConfig } from "@/lib/site-config";
+import { getSettings } from "@/lib/content";
 
-export default function Hero() {
+export default async function Hero() {
+  const settings = await getSettings();
+
   return (
     <section className="relative overflow-hidden bg-primary" aria-labelledby="hero-heading">
       <div className="bg-grid absolute inset-0" aria-hidden="true" />
@@ -20,7 +22,7 @@ export default function Hero() {
           style={{ "--rise-delay": "0ms" } as React.CSSProperties}
         >
           <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
-          Dipercaya 120+ perusahaan di Indonesia
+          {settings.hero_badge}
         </p>
 
         <h1
@@ -28,16 +30,16 @@ export default function Hero() {
           className="hero-rise mt-8 max-w-4xl font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
           style={{ "--rise-delay": "120ms" } as React.CSSProperties}
         >
-          Wujudkan Transformasi Digital{" "}
-          <span className="text-gradient">Bisnis Anda</span> Bersama Kami
+          {settings.hero_title}{" "}
+          <span className="text-gradient">{settings.hero_highlight}</span>{" "}
+          {settings.hero_title_end}
         </h1>
 
         <p
           className="hero-rise mt-6 max-w-2xl text-lg leading-8 text-slate-300"
           style={{ "--rise-delay": "240ms" } as React.CSSProperties}
         >
-          {siteConfig.name} membantu perusahaan membangun perangkat lunak, infrastruktur
-          cloud, dan keamanan siber kelas dunia — dari strategi hingga implementasi.
+          {settings.hero_subtitle}
         </p>
 
         <div

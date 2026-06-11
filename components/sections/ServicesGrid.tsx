@@ -2,9 +2,11 @@ import Link from "next/link";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { services } from "@/lib/data";
+import { getServices } from "@/lib/content";
 
-export default function ServicesGrid() {
+export default async function ServicesGrid() {
+  const services = await getServices();
+
   return (
     <section className="bg-surface" aria-labelledby="layanan-heading">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">

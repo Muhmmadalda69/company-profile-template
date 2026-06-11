@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services } from "@/lib/data";
+import { getServices } from "@/lib/content";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 const socialLinks = [
@@ -21,7 +21,8 @@ const socialLinks = [
   },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const services = await getServices();
   const year = new Date().getFullYear();
 
   return (
@@ -34,7 +35,7 @@ export default function Footer() {
               className="flex items-center gap-3 font-display text-xl font-bold text-white"
             >
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt={siteConfig.name}
                 width={48}
                 height={29}

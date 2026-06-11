@@ -1,6 +1,8 @@
-import { clients } from "@/lib/data";
+import { getClients } from "@/lib/content";
 
-export default function Clients() {
+export default async function Clients() {
+  const clients = await getClients();
+
   return (
     <section className="border-y border-slate-200 bg-white" aria-label="Klien kami">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">

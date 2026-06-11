@@ -4,7 +4,8 @@ import PageHero from "@/components/sections/PageHero";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { companyValues, milestones, team } from "@/lib/data";
+import { getTeam } from "@/lib/content";
+import { companyValues, milestones } from "@/lib/data";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -21,7 +22,9 @@ function initials(name: string) {
     .join("");
 }
 
-export default function TentangPage() {
+export default async function TentangPage() {
+  const team = await getTeam();
+
   return (
     <>
       <PageHero
