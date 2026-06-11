@@ -116,7 +116,7 @@ cp .env.example .env
 
 ```env
 # .env
-DATABASE_URL="file:./prisma/dev.db"
+DATABASE_URL="file:./prisma/database.db"
 AUTH_SECRET="<string acak minimal 32 karakter>"   # generate: openssl rand -hex 32
 ```
 
