@@ -1,3 +1,4 @@
+import HeroBackground from "@/components/sections/HeroBackground";
 import Button from "@/components/ui/Button";
 import { getSettings } from "@/lib/content";
 
@@ -6,22 +7,17 @@ export default async function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-primary" aria-labelledby="hero-heading">
-      <div className="bg-grid absolute inset-0" aria-hidden="true" />
-      <div
-        className="orb absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-accent/20 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="orb orb-slow absolute -bottom-40 right-1/5 h-105 w-105 rounded-full bg-primary-light/40 blur-3xl"
-        aria-hidden="true"
-      />
+      <HeroBackground />
 
       <div className="relative mx-auto flex min-h-svh max-w-6xl flex-col items-center justify-center px-4 pb-24 pt-36 text-center sm:px-6">
         <p
           className="hero-rise inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-slate-200 backdrop-blur"
           style={{ "--rise-delay": "0ms" } as React.CSSProperties}
         >
-          <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+          </span>
           {settings.hero_badge}
         </p>
 
@@ -46,7 +42,7 @@ export default async function Hero() {
           className="hero-rise mt-10 flex flex-col gap-4 sm:flex-row"
           style={{ "--rise-delay": "360ms" } as React.CSSProperties}
         >
-          <Button href="/kontak">
+          <Button href="/kontak" className="cta-glow">
             Mulai Konsultasi Gratis
             <svg
               viewBox="0 0 24 24"

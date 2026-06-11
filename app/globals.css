@@ -161,6 +161,57 @@ body {
   background-size: 3.5rem 3.5rem;
 }
 
+
+/* ---------- Digital hero: beam sweep ---------- */
+
+@keyframes beam-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(420%) skewX(-12deg);
+  }
+}
+
+.beam {
+  animation: beam-sweep 7s ease-in-out infinite;
+}
+
+/* ---------- Digital hero: floating particles ---------- */
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-1.5rem);
+    opacity: 0.9;
+  }
+}
+
+.particle {
+  animation: particle-float 6s ease-in-out infinite;
+  animation-delay: var(--particle-delay, 0s);
+}
+
+/* ---------- Digital hero: CTA glow ---------- */
+
+@keyframes cta-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(245 167 27 / 0.45);
+  }
+  50% {
+    box-shadow: 0 0 24px 4px rgb(245 167 27 / 0.35);
+  }
+}
+
+.cta-glow {
+  animation: cta-glow 3s ease-in-out infinite;
+}
+
 /* ---------- Accessibility: reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -181,5 +232,17 @@ body {
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  .beam,
+  .particle,
+  .cta-glow {
+    animation: none;
+  }
+
+  /* Pulsa sirkuit memakai SMIL (animateMotion) yang tidak bisa
+     dihentikan lewat CSS, jadi disembunyikan saja. */
+  .circuit-pulse {
+    display: none;
   }
 }
