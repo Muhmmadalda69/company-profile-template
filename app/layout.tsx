@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans, Poppins } from "next/font/google";
+import { Suspense } from "react";
+import NavigationProgress from "@/components/ui/NavigationProgress";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -72,14 +74,14 @@ const organizationJsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.address,
-    addressLocality: "Jakarta Selatan",
-    addressRegion: "DKI Jakarta",
+    addressLocality: "Karawang",
+    addressRegion: "Jawa Barat",
     addressCountry: "ID",
   },
   sameAs: [
-    siteConfig.social.linkedin,
+    // siteConfig.social.linkedin,
     siteConfig.social.instagram,
-    siteConfig.social.twitter,
+    // siteConfig.social.twitter,
   ],
 };
 
@@ -95,6 +97,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <Suspense fallback={null}>
+          <NavigationProgress />
+        </Suspense>
         {children}
       </body>
     </html>

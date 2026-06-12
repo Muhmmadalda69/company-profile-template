@@ -202,6 +202,214 @@ body {
   animation: cta-glow 3s ease-in-out infinite;
 }
 
+/* ---------- Tech loader ---------- */
+
+@keyframes loader-scan {
+  0% {
+    transform: translateX(-110%);
+  }
+  60%,
+  100% {
+    transform: translateX(280%);
+  }
+}
+
+@keyframes loader-orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-core-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes loader-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes loader-cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loader-overlay-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loader-card-pop {
+  from {
+    transform: translateY(0.75rem) scale(0.96);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Styling loader ditulis sebagai CSS murni (bukan utility Tailwind)
+   agar modal selalu fixed di tengah viewport di halaman mana pun. */
+
+/* Tampil seketika saat navigasi dimulai; durasi tampil minimum
+   diatur di useNavigationPending agar navigasi cepat tidak berkedip. */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgb(15 16 53 / 0.45);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  animation: loader-overlay-in 0.2s ease-out forwards;
+}
+
+.loader-card {
+  position: relative;
+  width: 100%;
+  max-width: 24rem;
+  overflow: hidden;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid rgb(37 40 120 / 0.1);
+  box-shadow: 0 25px 50px -12px rgb(15 16 53 / 0.4);
+  animation: loader-card-pop 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.loader-card-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.loader-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  width: 5rem;
+}
+
+.loader-orbit {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px dashed rgb(245 167 27 / 0.5);
+  animation: loader-orbit-spin 6s linear infinite;
+}
+
+.loader-core-glow {
+  position: absolute;
+  inset: 0.75rem;
+  border-radius: 1rem;
+  background: rgb(245 167 27 / 0.15);
+}
+
+/* Inti chip (rect SVG) dan glow-nya berdenyut bersama */
+.loader-core,
+.loader-core-glow {
+  animation: loader-core-pulse 1.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.loader-chip-svg {
+  position: relative;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--color-primary);
+}
+
+.loader-track {
+  position: relative;
+  height: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgb(37 40 120 / 0.1);
+}
+
+/* Garis skala tipis di atas track, kesan instrumen pengukur */
+.loader-track::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent 14px,
+    rgb(37 40 120 / 0.12) 14px,
+    rgb(37 40 120 / 0.12) 15px
+  );
+  pointer-events: none;
+}
+
+.loader-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    rgb(245 167 27 / 0),
+    var(--color-accent),
+    var(--color-accent-light)
+  );
+  animation: loader-scan 1.8s cubic-bezier(0.45, 0, 0.3, 1) infinite;
+  box-shadow: 0 0 12px 1px rgb(245 167 27 / 0.5);
+  will-change: transform;
+}
+
+.loader-label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.loader-dot {
+  animation: loader-dot-pulse 1.2s ease-in-out infinite;
+}
+
+.loader-cursor {
+  color: var(--color-accent);
+  animation: loader-cursor-blink 1s steps(1) infinite;
+}
+
 /* ---------- Accessibility: reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -228,6 +436,14 @@ body {
   .particle,
   .cta-glow {
     animation: none;
+  }
+
+  /* Tanpa animasi, bar scan akan tersangkut di luar track —
+     tampilkan sebagai bar statis sebagian terisi. */
+  .loader-bar {
+    animation: none;
+    transform: none;
+    width: 60%;
   }
 
   /* Pulsa sirkuit memakai SMIL (animateMotion) yang tidak bisa

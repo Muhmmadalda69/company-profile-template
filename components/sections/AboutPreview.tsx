@@ -7,18 +7,18 @@ import { siteConfig } from "@/lib/site-config";
 const highlights = [
   {
     icon: "rocket" as const,
-    title: "Eksekusi Cepat & Terukur",
-    description: "Metodologi agile dengan rilis bertahap sehingga hasil terlihat sejak minggu pertama.",
+    title: "Eksekusi Cepat & Adaptif",
+    description: "Metodologi agile untuk meluncurkan solusi Anda ke pasar secara cepat dan iteratif.",
   },
   {
     icon: "shield" as const,
-    title: "Keamanan Sejak Desain",
-    description: "Setiap solusi dibangun dengan prinsip secure-by-design dan standar ISO 27001.",
+    title: "Keamanan Modern",
+    description: "Setiap sistem dirancang dengan arsitektur aman guna melindungi integritas data Anda.",
   },
   {
-    icon: "users" as const,
-    title: "Tim Berdedikasi",
-    description: "150+ profesional bersertifikasi yang siap menjadi perpanjangan tim Anda.",
+    icon: "spark" as const,
+    title: "Teknologi Terkini",
+    description: "Memanfaatkan stack teknologi modern untuk efisiensi biaya dan skalabilitas tinggi.",
   },
 ];
 
@@ -33,24 +33,22 @@ export default function AboutPreview() {
               <CircuitPattern withPulses={false} />
               <div className="relative">
                 <p className="font-display text-5xl font-bold text-accent sm:text-6xl">
-                  {new Date().getFullYear() - siteConfig.foundedYear}+
+                  100%
                 </p>
                 <p className="mt-2 font-display text-lg font-semibold text-white">
-                  Tahun Menjadi Mitra Teknologi Terpercaya
+                  Berorientasi pada Inovasi & Dampak Nyata
                 </p>
                 <p className="mt-4 text-sm leading-6 text-slate-300">
-                  Sejak {siteConfig.foundedYear}, kami menemani ratusan perusahaan Indonesia
-                  bertumbuh melalui teknologi — dari startup tahap awal hingga BUMN dan
-                  korporasi multinasional.
+                  Didirikan pada {siteConfig.foundedYear}, {siteConfig.name} hadir dengan visi meruntuhkan batasan akses teknologi dan membantu bisnis melompati keterbatasan sistem lama.
                 </p>
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   <div className="rounded-xl bg-white/5 p-4 ring-1 ring-white/10">
-                    <p className="font-display text-2xl font-bold text-white">150+</p>
-                    <p className="mt-1 text-xs text-slate-400">Profesional Bersertifikasi</p>
+                    <p className="font-display text-2xl font-bold text-white">Modern</p>
+                    <p className="mt-1 text-xs text-slate-400">Teknologi Terbaru</p>
                   </div>
                   <div className="rounded-xl bg-white/5 p-4 ring-1 ring-white/10">
-                    <p className="font-display text-2xl font-bold text-white">3</p>
-                    <p className="mt-1 text-xs text-slate-400">Kantor di Indonesia</p>
+                    <p className="font-display text-2xl font-bold text-white">10+</p>
+                    <p className="mt-1 text-xs text-slate-400">Talenta Terkurasi</p>
                   </div>
                 </div>
               </div>
@@ -67,11 +65,10 @@ export default function AboutPreview() {
               id="tentang-heading"
               className="mt-3 font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl"
             >
-              Mitra Teknologi yang Tumbuh Bersama Anda
+              Membangun Solusi Digital Masa Depan
             </h2>
             <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
-              Kami percaya teknologi terbaik lahir dari pemahaman bisnis yang mendalam.
-              Itulah mengapa setiap proyek dimulai dengan mendengarkan — bukan menjual.
+              Kami percaya teknologi terbaik lahir dari kolaborasi erat dan pemahaman bisnis yang mendalam. Itulah mengapa kami fokus menghadirkan solusi yang lincah dan berpusat pada hasil.
             </p>
           </Reveal>
 

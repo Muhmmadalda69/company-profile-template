@@ -44,7 +44,7 @@ export default async function TentangPage() {
               </span>
               <h2 className="mt-6 font-display text-2xl font-bold text-primary">Visi</h2>
               <p className="mt-3 leading-7 text-muted">
-                Menjadi mitra transformasi digital paling terpercaya di Asia Tenggara,
+                Menjadi mitra transformasi digital terpercaya,
                 yang memberdayakan setiap bisnis untuk tumbuh melalui teknologi.
               </p>
             </div>
@@ -107,7 +107,7 @@ export default async function TentangPage() {
         <div className="relative mx-auto max-w-4xl px-4 py-24 sm:px-6">
           <SectionHeading
             eyebrow="Perjalanan Kami"
-            title="Lebih dari Satu Dekade Bertumbuh"
+            title="Langkah Baru, Inovasi Tanpa Batas"
             dark
           />
           <ol className="relative mt-16 space-y-10 border-l border-white/15 pl-8 sm:pl-12">
@@ -135,7 +135,7 @@ export default async function TentangPage() {
       </section>
 
       {/* Tim */}
-      <section className="bg-white" aria-labelledby="tim-heading">
+      {/* <section className="bg-white" aria-labelledby="tim-heading">
         <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
           <SectionHeading
             eyebrow="Tim Kami"
@@ -162,7 +162,7 @@ export default async function TentangPage() {
             ))}
           </ul>
         </div>
-      </section>
+      </section> */}
 
       <CtaBanner />
     </>

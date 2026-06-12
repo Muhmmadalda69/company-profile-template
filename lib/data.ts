@@ -179,29 +179,9 @@ export const team: TeamMember[] = [
 
 export const milestones: Milestone[] = [
   {
-    year: "2012",
+    year: "2026",
     title: "Awal Perjalanan",
-    description: "Didirikan di Jakarta oleh tiga engineer dengan misi mendemokratisasi teknologi.",
-  },
-  {
-    year: "2015",
-    title: "Ekspansi Enterprise",
-    description: "Menangani proyek enterprise pertama untuk sektor perbankan nasional.",
-  },
-  {
-    year: "2018",
-    title: "Sertifikasi ISO 27001",
-    description: "Meraih sertifikasi keamanan informasi internasional dan membuka divisi keamanan siber.",
-  },
-  {
-    year: "2021",
-    title: "100+ Klien",
-    description: "Melewati 100 klien aktif dan membuka kantor cabang di Surabaya dan Yogyakarta.",
-  },
-  {
-    year: "2024",
-    title: "Era AI",
-    description: "Meluncurkan divisi Data & AI untuk membantu klien mengadopsi kecerdasan buatan.",
+    description: "Didirikan di Karawang dengan visi meruntuhkan batasan akses teknologi dan menghadirkan solusi digital yang inklusif untuk semua.",
   },
 ];
 

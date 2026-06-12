@@ -2,19 +2,19 @@ import type { NavLink } from "./types";
 
 export const siteConfig = {
   name: "Ruang Code",
-  legalName: "PT Ruang Code Indonesia",
+  legalName: "Ruang Code",
   tagline: "Solusi Digital untuk Transformasi Bisnis Anda",
   description:
     "Ruang Code adalah perusahaan teknologi yang membantu bisnis bertransformasi digital melalui pengembangan perangkat lunak, cloud, keamanan siber, dan analitik data.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ruangcode.co.id",
-  email: "halo@ruangcode.co.id",
-  phone: "+62 21 5095 0000",
-  address: "Menara Ruang Code Lt. 12, Jl. Jend. Sudirman Kav. 52-53, Jakarta Selatan 12190",
-  foundedYear: 2012,
+  email: "info.ruangcode@gmail.com",
+  phone: "+62 85814404967",
+  address: "Wargasetra, Tegalwaru, Kab. Karawang, Jawa Barat, Indonesia",
+  foundedYear: 2026,
   social: {
-    linkedin: "https://www.linkedin.com/company/ruangcode",
-    instagram: "https://www.instagram.com/ruangcode.id",
-    twitter: "https://www.twitter.com/ruangcode_id",
+    // linkedin: "https://www.linkedin.com/company/",
+    instagram: "https://www.instagram.com/ruang.code.id",
+    // twitter: "https://www.twitter.com/ruangcode_id",
   },
 } as const;
 
