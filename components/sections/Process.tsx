@@ -1,3 +1,4 @@
+import CircuitPattern from "@/components/ui/CircuitPattern";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { processSteps } from "@/lib/data";
@@ -5,7 +6,7 @@ import { processSteps } from "@/lib/data";
 export default function Process() {
   return (
     <section className="relative overflow-hidden bg-primary" aria-labelledby="proses-heading">
-      <div className="bg-grid absolute inset-0" aria-hidden="true" />
+      <CircuitPattern />
       <div
         className="orb absolute -right-32 top-0 h-96 w-96 rounded-full bg-accent/20 blur-3xl"
         aria-hidden="true"

@@ -152,16 +152,6 @@ body {
   color: transparent;
 }
 
-/* ---------- Background grid pattern ---------- */
-
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgb(148 163 184 / 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(148 163 184 / 0.08) 1px, transparent 1px);
-  background-size: 3.5rem 3.5rem;
-}
-
-
 /* ---------- Digital hero: beam sweep ---------- */
 
 @keyframes beam-sweep {

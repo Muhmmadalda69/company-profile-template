@@ -1,9 +1,10 @@
 import Button from "@/components/ui/Button";
+import CircuitPattern from "@/components/ui/CircuitPattern";
 
 export default function NotFound() {
   return (
     <section className="relative flex min-h-svh items-center justify-center overflow-hidden bg-primary">
-      <div className="bg-grid absolute inset-0" aria-hidden="true" />
+      <CircuitPattern />
       <div
         className="orb absolute -top-24 left-1/3 h-80 w-80 rounded-full bg-accent/25 blur-3xl"
         aria-hidden="true"

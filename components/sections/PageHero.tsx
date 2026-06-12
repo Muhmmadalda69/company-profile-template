@@ -1,3 +1,5 @@
+import CircuitPattern from "@/components/ui/CircuitPattern";
+
 interface PageHeroProps {
   eyebrow: string;
   title: string;
@@ -7,7 +9,7 @@ interface PageHeroProps {
 export default function PageHero({ eyebrow, title, description }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-primary">
-      <div className="bg-grid absolute inset-0" aria-hidden="true" />
+      <CircuitPattern />
       <div
         className="orb absolute -top-24 right-1/4 h-80 w-80 rounded-full bg-accent/25 blur-3xl"
         aria-hidden="true"

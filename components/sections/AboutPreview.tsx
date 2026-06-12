@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import CircuitPattern from "@/components/ui/CircuitPattern";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -29,7 +30,7 @@ export default function AboutPreview() {
           <div className="relative">
             <div className="absolute -left-6 -top-6 h-24 w-24 rounded-2xl bg-accent-soft" aria-hidden="true" />
             <div className="relative overflow-hidden rounded-3xl bg-primary p-8 sm:p-10">
-              <div className="bg-grid absolute inset-0" aria-hidden="true" />
+              <CircuitPattern withPulses={false} />
               <div className="relative">
                 <p className="font-display text-5xl font-bold text-accent sm:text-6xl">
                   {new Date().getFullYear() - siteConfig.foundedYear}+

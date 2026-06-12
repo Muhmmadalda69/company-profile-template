@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CtaBanner from "@/components/sections/CtaBanner";
 import PageHero from "@/components/sections/PageHero";
+import CircuitPattern from "@/components/ui/CircuitPattern";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -102,7 +103,7 @@ export default async function TentangPage() {
 
       {/* Perjalanan */}
       <section className="relative overflow-hidden bg-primary" aria-labelledby="perjalanan-heading">
-        <div className="bg-grid absolute inset-0" aria-hidden="true" />
+        <CircuitPattern />
         <div className="relative mx-auto max-w-4xl px-4 py-24 sm:px-6">
           <SectionHeading
             eyebrow="Perjalanan Kami"
